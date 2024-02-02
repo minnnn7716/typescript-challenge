@@ -19,5 +19,12 @@ interface UrlParts {
 }
 
 export function parseUrl(url: string): UrlParts {
-   // 請在此處寫下你的程式碼
+    const slpitUrl = url.split('/');
+    const slpitUrlObj = {
+      protocol: slpitUrl[0],
+      hostname: slpitUrl[2],
+      path: `/${slpitUrl[3]}`
+    }
+
+    return slpitUrlObj;
 }
